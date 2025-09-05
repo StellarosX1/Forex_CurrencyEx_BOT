@@ -1,0 +1,1 @@
+# Forex_CurrencyEx_BOT
