@@ -1,27 +1,21 @@
 name: Daily INR Rates Telegram Bot
-
 on:
   schedule:
     # Runs at 9:00 AM IST daily (IST is UTC+5:30)
-    - cron: '03 03 * * *'  # 03:30 UTC = 9:00 AM IST (adjust minutes for exact time)
-
+    - cron: '30 3 * * *'  # 03:30 UTC = 9:00 AM IST
 jobs:
   send_daily_rates:
     runs-on: ubuntu-latest
-
     steps:
     - name: Checkout repository
       uses: actions/checkout@v3
-
     - name: Setup Python
       uses: actions/setup-python@v4
       with:
         python-version: '3.11'
-
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
-
     - name: Run bot
       run: python main.py
