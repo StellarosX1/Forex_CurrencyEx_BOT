@@ -23,5 +23,5 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
-    - name: Run CurrenSon.py
-      run: python CurrenSon.py
+    - name: Run main.py
+      run: python main.py
